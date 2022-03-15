@@ -11,3 +11,5 @@ con difficoltà 3 => tra 1 e 49
 // Controllo che file script.js e index.html siano collegati
 console.log('JS ok');
 
+// Creo grigllia con js
+const square = document.getElementById('square');
