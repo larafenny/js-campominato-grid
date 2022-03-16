@@ -13,3 +13,9 @@ console.log('JS ok');
 
 // Creo grigllia con js
 const square = document.getElementById('square');
+
+// Creo  numero  righe e colonne e calcollo numeero di celle
+const row = 10;
+const column = 10;
+const totCell = row * column;
+
