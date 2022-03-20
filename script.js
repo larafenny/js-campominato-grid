@@ -12,8 +12,18 @@ con difficoltà 3 => tra 1 e 49
 // Controllo che file script.js e index.html siano collegati
 console.log('JS ok');
 
-// Recupero elemento square da html 
-const square = document.getElementById('square');
+// Recupero elementi da html 
+    // Square
+    const square = document.getElementById('square'); 
+    // Easy Button
+    const easyButton = document.getElementById('easy');
+    // Medium Button
+    const mediumButton = document.getElementById('medium');
+    // Hard Button
+    const hardButtton = document.getElementById('hard');
+
+
+
 
 // Creo  numero  righe e colonne e calcolo numeero di celle
 const row = 10;
