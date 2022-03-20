@@ -38,3 +38,18 @@ h1{
   .bg-lightblue{
     background-color: lightblue;
   }
+
+  .cell.easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+  }
+
+.cell.medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+  }
+
+.cell.hard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+  }
