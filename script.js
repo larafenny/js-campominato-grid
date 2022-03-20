@@ -24,6 +24,8 @@ const totCell = row * column;
 function newCell(){
     const divCell = document.createElement('div');
     divCell.classList.add('cell');
+    //inserisco numero iin ogni cella
+    
     return divCell;
 }
 
@@ -32,4 +34,5 @@ for(let i=0; i<totCell; i++){
     const cell = newCell();
     // Inserisco le celle nel contenitore
     square.appendChild(cell);
+    cell.innerText = i+ 1;
 }

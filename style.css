@@ -26,4 +26,7 @@ body{
     height: calc(100% / 10);
     border: 2px solid white;
     background-color: burlywood;
+    text-align: center;
+    line-height: 80px;
+    
   }
