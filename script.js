@@ -12,7 +12,7 @@ con difficoltà 3 => tra 1 e 49
 // Controllo che file script.js e index.html siano collegati
 console.log('JS ok');
 
-// Creo grigllia con js
+// Recupero elemento square da html 
 const square = document.getElementById('square');
 
 // Creo  numero  righe e colonne e calcolo numeero di celle
@@ -20,9 +20,16 @@ const row = 10;
 const column = 10;
 const totCell = row * column;
 
-// Creo funzione che crea un div per la cella
-function newCell{
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    return cell;
+// Creo funzione che crea un div per ogni cella
+function newCell(){
+    const divCell = document.createElement('div');
+    divCell.classList.add('cell');
+    return divCell;
+}
+
+// Creo e nserisco i 100 quadratini all'interno del quadrato con ciclo for utilizzando la funzione appena create
+for(let i=0; i<totCell; i++){
+    const cell = newCell();
+    // Inserisco le celle nel contenitore
+    square.appendChild(cell);
 }
