@@ -13,16 +13,21 @@ con difficoltà 3 => tra 1 e 49
 console.log('JS ok');
 
 // Recupero elementi da html 
-    // Square
-    const square = document.getElementById('square'); 
-    // Easy Button
-    const easyButton = document.getElementById('easy');
-    // Medium Button
-    const mediumButton = document.getElementById('medium');
-    // Hard Button
-    const hardButtton = document.getElementById('hard');
+// Easy Button
+const easyButton = document.getElementById('easy');
+// Medium Button
+const mediumButton = document.getElementById('medium');
+// Hard Button
+const hardButton = document.getElementById('hard');
 
+easyButton.addEventListener('click', ()=> newCellInGrid(100, 'easy'));
 
+mediumButton.addEventListener('click', ()=> newCellInGrid(81, 'medium'));
+
+hardButton.addEventListener('click', ()=> newCellInGrid(49, 'hard'));
+
+/* ----------- Vecchiie variabili contenenti numero di righe e colonne ------------
+non mi servono piiù perchè la funziione che crea le celle non avrà più bisogno di variabilii esterne, e sarà flessibille.
 
 
 // Creo  numero  righe e colonne e calcolo numeero di celle
@@ -30,24 +35,42 @@ const row = 10;
 const column = 10;
 const totCell = row * column;
 
-// Creo funzione che crea un div per ogni cella
-function newCell(){
-    const divCell = document.createElement('div');
-    divCell.classList.add('cell');
-    //inserisco numero iin ogni cella
+--------------------------------------------------------------------------------------*/
+
+// Creo funzione che crea tot celle in base al livello
+function newCellInGrid(totCell, level){
+    // Recupero square da html 
+    const square = document.getElementById('square'); 
+    // creoo le celle dentro square
+    for(let i=0; i<totCell; i++){
+        //creo divCell che è un div all'interno dii  square
+        const divCell = document.createElement('div');
+        // aggiungo classe cell al div appena creato
+        divCell.classList.add('cell');
+        divCell.classList.add(level);
+
+        //inserisco numero iin ogni cella
+        divCell.innerText = i+ 1;
+        // Inserisco le celle nel contenitore
+        square.appendChild(divCell);
+        
+        
+        // aggiungo eventListener che al click la cella si colora di azzurro
+        divCell.addEventListener('click', function(){
+            divCell.classList.toggle('bg-lightblue');
+        });
+    }
+
+
+
+
+    
     
     return divCell;
+
+
 }
 
 // Creo e nserisco i 100 quadratini all'interno del quadrato con ciclo for utilizzando la funzione appena create
-for(let i=0; i<totCell; i++){
-    const cell = newCell();
-    // Inserisco le celle nel contenitore
-    square.appendChild(cell);
-    cell.innerText = i+ 1;
-    // aggiungo eventListener che al click la cella si colora di azzurro
-    cell.addEventListener('click', function(){
-        cell.classList.toggle('bg-lightblue');
-    });
-}
+
 
