@@ -30,3 +30,7 @@ body{
     line-height: 80px;
     
   }
+
+  .bg-lightblue{
+    background-color: lightblue;
+  }

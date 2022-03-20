@@ -35,4 +35,9 @@ for(let i=0; i<totCell; i++){
     // Inserisco le celle nel contenitore
     square.appendChild(cell);
     cell.innerText = i+ 1;
+    // aggiungo eventListener che al click la cella si colora di azzurro
+    cell.addEventListener('click', function(){
+        cell.classList.toggle('bg-lightblue');
+    });
 }
+
