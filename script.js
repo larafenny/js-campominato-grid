@@ -41,6 +41,8 @@ const totCell = row * column;
 function newCellInGrid(totCell, level){
     // Recupero square da html 
     const square = document.getElementById('square'); 
+    // reset griiglia ogni volta chee cliccoo su un bottone
+    square.innerHTML = '';
     // creoo le celle dentro square
     for(let i=0; i<totCell; i++){
         //creo divCell che è un div all'interno dii  square
@@ -60,17 +62,4 @@ function newCellInGrid(totCell, level){
             divCell.classList.toggle('bg-lightblue');
         });
     }
-
-
-
-
-    
-    
-    return divCell;
-
-
 }
-
-// Creo e nserisco i 100 quadratini all'interno del quadrato con ciclo for utilizzando la funzione appena create
-
-
